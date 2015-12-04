@@ -18,7 +18,7 @@ You'll be given an integer, one per line. Example:<br/>
 Your program should emit if the number if deficient, abundant (and its abundance), or neither. Example:<br/>
 18 abundant by 3<br/>
 21 deficient<br/>
-9 perfect<br/>
+9 deficient<br/>
 
 ####Challenge Input
 111  <br/>
@@ -29,7 +29,7 @@ Your program should emit if the number if deficient, abundant (and its abundance
 85 <br/>
 
 ####Challenge Output
-111 perfect <br/>
+111 deficient <br/>
 112 abundant by 24 <br/>
 220 abundant by 64 <br/>
 69 deficient<br/>
