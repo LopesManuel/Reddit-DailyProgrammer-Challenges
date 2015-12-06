@@ -1,7 +1,6 @@
 --Main
 local fruits = {}
 local wallet = 500
-local max = 0
 --Read input
 while true do
   local line = io.read()
@@ -9,10 +8,9 @@ while true do
   local n  = string.match(line, "%a+")
   local p  = string.match(line, "%d+")
   local fruit = {name = n,price = p, howMany = 0, max = math.floor(wallet/p)}
-  if math.floor(wallet/p) > max then max = math.floor(wallet/p) end
   table.insert(fruits, fruit)
 end
-
+--Print output
 function printFruits() do
 	local output = ""
 	for j, fruit in ipairs(fruits) do
@@ -28,7 +26,7 @@ function printFruits() do
 	print(output)
 end
 end
-
+ 
 function calculateWallet(wall, f) do
 	for j, fruit in ipairs(fruits) do 
 		fruit.howMany = f[j] or 0
@@ -40,10 +38,9 @@ function calculateWallet(wall, f) do
 end
 end
 
-function Combinations(janne,max, wll)
+function Combinations(janne, wll)
   local a = {}
   local vals = janne
-  local n = max
 
   local function aux(m, w)
     for i = 0, janne[m].max do
@@ -59,4 +56,4 @@ function Combinations(janne,max, wll)
   aux(1,wll)
 end
 
-Combinations(fruits,max, wallet)
+Combinations(fruits, wallet)
