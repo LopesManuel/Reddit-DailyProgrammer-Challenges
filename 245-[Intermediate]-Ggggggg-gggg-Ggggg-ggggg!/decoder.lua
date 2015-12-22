@@ -2,7 +2,6 @@
 local dictionary = {}
 
 --Read input
-
 --First line has the dictionary
 local line = io.read()
 if line == nil then print("Input error!") return end
@@ -13,9 +12,15 @@ for match in line:gmatch("%a+ %a+")do
   local entry = {k = key, v = value}
   table.insert(dictionary, entry)
 end
---Second line has the message
-line = io.read()
-if line == nil then print("Input error!") return end
+--Read message
+local line = ""
+while true do
+  local lineTemp = io.read()
+  if lineTemp == nil then break end
+  line = line .. lineTemp
+end
+if line == "" then print("Input error!") return end
+
 --Decode
 local output = ""
 for word in line:gmatch("%w+")do
