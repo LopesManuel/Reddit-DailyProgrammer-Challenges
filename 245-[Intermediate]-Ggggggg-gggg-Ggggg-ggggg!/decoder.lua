@@ -2,6 +2,7 @@
 local dictionary = {}
 
 --Read input
+
 --First line has the dictionary
 local line = io.read()
 if line == nil then print("Input error!") return end
