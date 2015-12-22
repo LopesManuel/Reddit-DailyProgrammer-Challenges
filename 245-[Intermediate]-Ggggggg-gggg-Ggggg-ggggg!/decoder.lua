@@ -20,12 +20,19 @@ if line == nil then print("Input error!") return end
 local output = ""
 for word in line:gmatch("%w+")do
   local outWord = ""
-  for match in word:gmatch("%a%a%a")do
-    for j, entry in ipairs(dictionary) do
-      match = string.gsub(match, entry.v, entry.k)
+  local saveWord = word
+  for i=1, #word, 1 do
+    for x, entry in ipairs(dictionary) do
+      fo,lo = string.find(word, entry.v)
+      if fo == 1 then 
+        outWord = outWord .. entry.k
+        i = i + lo
+        word = string.gsub(word, entry.v, "",1)
+      end
     end
-    outWord = outWord .. match
   end
-  line = string.gsub(line, word, outWord)
+  -- decodes by one word at a time
+  line = string.gsub(line, saveWord, outWord,1)
 end
+
 print(line)
