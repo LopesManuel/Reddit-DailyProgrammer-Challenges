@@ -1,9 +1,7 @@
 local numbers = {}
-local count = 1
 while true do
   local lineNumber = io.read("*number")
   if lineNumber == nil then break end
-  count = count + 1
   table.insert(numbers, lineNumber)
 end
 
