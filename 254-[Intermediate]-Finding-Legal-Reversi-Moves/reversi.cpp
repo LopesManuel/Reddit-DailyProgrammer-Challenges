@@ -64,14 +64,16 @@ void get_possible_moves(char &player, char &enemy){
             if( board[pos_in_board] == enemy){
                 int jumps = 2;
                 int possible_move = get_pos(pos.x*jumps + P_positions[i].x, pos.y*jumps + P_positions[i].y );
-                //If it's an enemy then get free position to jump to
-                while( board[possible_move] != '-' && board[possible_move] != '*'){
-                    jumps++;
-                    possible_move = get_pos(pos.x*jumps + P_positions[i].x, pos.y*jumps + P_positions[i].y );
-                }
-                if( possible_move > 0 && possible_move < board_side*board_side && board[possible_move] != '*'){
-                    board[possible_move] = '*';
-                    p_moves_count++;
+                if( possible_move >= 0 && possible_move < board_side*board_side){
+                    //If it's an enemy then get free position to jump to
+                    while( board[possible_move] == enemy){
+                        jumps++;
+                        possible_move = get_pos(pos.x*jumps + P_positions[i].x, pos.y*jumps + P_positions[i].y );
+                    }
+                    if( board[possible_move] == '-'){
+                        board[possible_move] = '*';
+                        p_moves_count++;
+                    }
                 }
             }
         }
