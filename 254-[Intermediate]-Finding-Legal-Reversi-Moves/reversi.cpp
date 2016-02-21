@@ -1,3 +1,12 @@
+/**---------------------------------------------------------------------------------------**
+ [2016-02-21] Challenge #254 [Intermediate] Finding Legal Reversi Moves
+ https://www.reddit.com/r/dailyprogrammer/comments/468pvf/20160217_challenge_254_intermediate_finding_legal/
+ 
+ Find all valid moves on a board in Othello (Reversi).
+
+ https://github.com/LopesManuel/Reddit-DailyProgrammer-Challenges/blob/master/254-%5BIntermediate%5D-Finding-Legal-Reversi-Moves/reversi.cpp
+ Manuel Lopes 2/20/2016
+**---------------------------------------------------------------------------------------**/
 #include <algorithm>
 #include <iostream>
 #include <vector>
