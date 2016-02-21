@@ -3,10 +3,10 @@
  https://www.reddit.com/r/dailyprogrammer/comments/468pvf/20160217_challenge_254_intermediate_finding_legal/
  
  Find all valid moves on a board in Othello (Reversi).
-
  https://github.com/LopesManuel/Reddit-DailyProgrammer-Challenges/blob/master/254-%5BIntermediate%5D-Finding-Legal-Reversi-Moves/reversi.cpp
  Manuel Lopes 2/20/2016
 **---------------------------------------------------------------------------------------**/
+
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -19,9 +19,8 @@ struct position{
   int x;
   int y;  
 };
-//Used to save player and enemy positions
+//Used to save player positions
 std::vector<position> P_positions;
-std::vector<position> E_positions;
 
 inline int get_pos(int ROW, int COL)
 {
@@ -59,6 +58,7 @@ int main( int argc, char **argv ) {
     double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
     std::cout <<"Time:" << elapsed_secs << std::endl; 
 }
+
 /** Checks for possible moves **/
 void get_possible_moves(char &player, char &enemy){
     int p_moves_count = 0;
