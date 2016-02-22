@@ -1,5 +1,6 @@
 local trie = {}
 
+
 local input = io.read()
 if input == nil then print("Input error!") return end
 
@@ -28,17 +29,17 @@ end
 output = {}
 table.insert(output, "")
 
-for i=1,2 do
-	local neighbors = trie[0][i].next
-	local path = {}
-	while #neighbors > 0 then
-		local atNode = neighbors[0]
-		table.insert(atNode, "")
-		if atNode
-		
-	do 
-end
-
+for j, n in ipairs(trie) do
+	for i=1,#output do
+		local backupWord = output[i];
+		if j > 1 and (trie[j-1][1].next[1] == n[1] or trie[j-1][1].next[2] == n[1] )then
+			output[i] = backupWord .." ".. n[1].num.. " " 
+		end
+		if n[2] ~=nil and j > 1 and  trie[j-1][2].next[2] == n[2] then
+			table.insert(output, backupWord .." "..n[2].num .. " " )
+		end
+	end
+end 
 for i, word in ipairs(output) do
 	print(word)
 end
